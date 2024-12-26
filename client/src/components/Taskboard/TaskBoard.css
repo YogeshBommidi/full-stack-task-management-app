@@ -1,0 +1,87 @@
+.taskboardContainer {
+  width: 90%;
+  height: 90vh;
+  border: 2px solid var(--yellow);
+  border-radius: 7px;
+  background: var(--lightPurple);
+  overflow: auto;
+}
+
+.taskboardContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.taskboardContainer::-webkit-scrollbar-track {
+  background: var(--lightPurple);
+  border-radius: 7px;
+}
+
+.taskboardContainer::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
+  border-radius: 7px;
+  border: 3px solid var(--lightPurple);
+}
+
+.taskboardHeader {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.taskboardTitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.taskboardTitle > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--yellow);
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--darkPurple);
+}
+
+.search-bar {
+  border: 2px solid var(--yellow);
+  background: var(--yellow);
+  border-radius: 7px;
+  margin: 10px;
+  padding: 10px;
+  width: 30%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  color: var(--darkPurple);
+  justify-content: flex-start;
+  font-weight: bold;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 5px;
+  border: 1px solid var(--yellow);
+  border-radius: 5px;
+  outline: none;
+  background: var(--yellow);
+}
+
+@media screen and (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

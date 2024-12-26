@@ -16,4 +16,22 @@
     align-items: center;
     justify-content: center;
     width: 80%;
+    background: var(--darkPurple);
+}
+
+@media screen and (max-width: 768px){
+ .mainPageWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+ }
+ .leftSideWrapper{
+  width: 100%;
+  border-right: none;
+  display: flex;
+ }
+ .rightSideWrapper{
+  width: 100%;
+  padding: 2rem 0rem;
+ }
 }
