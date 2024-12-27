@@ -2,10 +2,34 @@ import React, { useState } from "react";
 import "./TaskBoard.css";
 import { FaSearch } from "react-icons/fa";
 import TaskCards from "../Task-Cards/TaskCards";
-import taskdata from "../../repo-data.json";
+import useTasks from "../../Hooks/useTasks";
+import { PuffLoader } from "react-spinners";
 
 const TaskBoard = () => {
+  const { data, isError, isLoading } = useTasks();
   const [searchTerm, setSearchTerm] = useState("");
+
+  if (isError) {
+    return (
+      <div className="wrapper">
+        <span>Error While Fetching the Market Data</span>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="loading-spinner">
+        <PuffLoader
+          height="80"
+          width="80"
+          radius={1}
+          color="orange"
+          aria-label="puff-loading"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="taskboardContainer">
@@ -28,12 +52,9 @@ const TaskBoard = () => {
         </div>
       </div>
       <div className="task-cards">
-        {taskdata
-          .filter(
-            (cards) =>
-              cards.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              cards.description.toLowerCase().includes(searchTerm.toLowerCase())
-          )
+        {data
+          .filter((task) => task.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            task.description.toLowerCase().includes(searchTerm.toLowerCase()))
           .map((cards, i) => (
             <TaskCards cards={cards} key={i} />
           ))}

@@ -1,9 +1,13 @@
-import './App.css';
-import MainPage from './components/MainPage/MainPage';
+import "./App.css";
+import { QueryClient, QueryClientProvider } from "react-query";
+import MainPage from "./components/MainPage/MainPage";
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <MainPage/>
+    <QueryClientProvider client={queryClient}>
+      <MainPage />
+    </QueryClientProvider>
   );
 }
 
