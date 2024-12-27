@@ -34,7 +34,7 @@ export const getAllTasks = asyncHandler(async (req, res) => {
   try {
     const tasks = await prisma.task.findMany({
       orderBy: {
-        title: "asc",
+        title: "desc",
       },
     });
     res.status(200).json(tasks);

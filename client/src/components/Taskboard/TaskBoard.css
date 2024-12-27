@@ -31,8 +31,16 @@
 .taskboardTitle {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px 10px;
+  position: relative;
 }
+
+.taskBoardTitleBtn{
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+} 
 
 .taskboardTitle > div {
   display: flex;
@@ -54,12 +62,53 @@
   color: var(--darkPurple);
 }
 
+.addTaskForm {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+  background: var(--darkPurple);
+  border: 2px solid var(--yellow);
+  border-radius: 7px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 300ms ease-in-out;
+}
+
+.taskFormFields {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.inputField {
+  padding: 5px;
+  width: 70%;
+  height: 25%;
+  border: 1px solid var(--yellow);
+  border-radius: 5px;
+  outline: none;
+  background: var(--yellow);
+}
+
+.descriptionInput {
+  height: 5rem;
+  resize: none;
+}
+
 .search-bar {
   border: 2px solid var(--yellow);
   background: var(--yellow);
   border-radius: 7px;
   margin: 10px;
-  padding: 10px;
+  padding: 5px 10px;
   width: 30%;
   height: fit-content;
   display: flex;
@@ -83,5 +132,22 @@
   .search-bar {
     width: 100%;
     margin: 5px 0;
+  }
+
+  .addTaskForm{
+    width: 80%;
+  }
+
+  .taskFormFields{
+    gap: 0.5rem;
+  }
+
+  .taskFormFields > span{
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .inputField{
+    width: 50%;
   }
 }
